@@ -1,0 +1,17 @@
+Credenciales Máquinas Oracle
+
+USUARIOS LINUX	PASSWORD
+ root		oracle
+ oracle 	oracle
+
+
+USUARIOS ORACLE EN MAQUINA ORA_BASE
+
+PASSWORD COMUN : duoc
+
+
+
+  
+
+
+
