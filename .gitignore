@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+.expo/
+.next/
+.out/
+.cache/
+.vscode/
+.env
+.env.*
