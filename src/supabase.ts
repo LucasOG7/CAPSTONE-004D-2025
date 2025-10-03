@@ -9,21 +9,25 @@ if (!url || !anonKey || !serviceRoleKey) {
   throw new Error('Faltan SUPABASE_URL / SUPABASE_ANON_KEY / SUPABASE_SERVICE_ROLE_KEY en .env');
 }
 
-// Cliente público (ANON) — para login/signup/getUser
 export const supabase = createClient(url, anonKey, {
   auth: { autoRefreshToken: false, persistSession: false },
 });
-
-// Cliente admin (SERVICE ROLE) — bypass RLS y admin.*
 export const supabaseAdmin = createClient(url, serviceRoleKey, {
   auth: { autoRefreshToken: false, persistSession: false },
 });
 
-// Helpers
+// Cliente "como usuario" (inyecta el JWT del usuario para RLS en lecturas)
+export function supabaseAsUser(accessToken: string) {
+  return createClient(url, anonKey, {
+    global: { headers: { Authorization: `Bearer ${accessToken}` } },
+    auth: { autoRefreshToken: false, persistSession: false },
+  });
+}
+
 export async function getUserFromToken(accessToken: string) {
   const { data, error } = await supabase.auth.getUser(accessToken);
   if (error || !data.user) return null;
-  return data.user; // { id, email, ... }
+  return data.user;
 }
 
 export async function getProfileIdByAuthId(authUserId: string) {

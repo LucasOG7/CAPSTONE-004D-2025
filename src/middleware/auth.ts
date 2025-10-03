@@ -1,18 +1,20 @@
 import { Request, Response, NextFunction } from 'express';
-import { getUserFromToken } from '../supabase';
+import { supabase } from '../supabase';
 
 export async function requireAuth(
-  req: Request & { user?: any },
+  req: Request & { user?: any; token?: string },
   res: Response,
   next: NextFunction
 ) {
   const auth = req.headers.authorization || '';
-  const token = auth.startsWith('Bearer ') ? auth.slice(7) : null;
-  if (!token) return res.status(401).json({ detail: 'Falta token' });
+  const m = auth.match(/^Bearer (.+)$/);
+  if (!m) return res.status(401).json({ detail: 'Falta token' });
 
-  const user = await getUserFromToken(token);
-  if (!user) return res.status(401).json({ detail: 'Token inválido' });
+  const token = m[1];
+  const { data, error } = await supabase.auth.getUser(token);
+  if (error || !data.user) return res.status(401).json({ detail: 'Token inválido' });
 
-  req.user = user; // { id, email, ... }
+  req.user = data.user;    // { id, email, ... }
+  req.token = token;       // ← lo usaremos para supabaseAsUser
   next();
 }
