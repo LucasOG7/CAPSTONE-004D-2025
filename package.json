@@ -13,19 +13,27 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@supabase/supabase-js": "^2.58.0",
+    "@supabase/supabase-js": "^2.75.0",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.2",
+    "cross-fetch": "^4.1.0",
+    "dotenv": "^17.2.3",
+    "expo-server-sdk": "^4.0.0",
     "express": "^5.1.0",
+    "fast-xml-parser": "^5.3.0",
+    "groq-sdk": "^0.33.0",
+    "luxon": "^3.7.2",
+    "node-cron": "^4.2.1",
     "openai": "^5.23.0",
+    "rss-parser": "^3.13.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
-    "@types/node": "^24.5.2",
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^24.7.2",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
