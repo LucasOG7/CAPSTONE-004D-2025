@@ -2,3 +2,7 @@
 	path = FASE 2/MyGoalFinance-Front
 	url = https://github.com/KurtWelter/MyGoalFinance-Front.git
 	branch = main
+[submodule "FASE 2/MyGoalFinance-Backend"]
+	path = FASE 2/MyGoalFinance-Backend
+	url = https://github.com/KurtWelter/MyGoalFinance-Backend.git
+	branch = main
