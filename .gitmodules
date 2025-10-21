@@ -10,3 +10,7 @@
 	path = FASE 2/MyGoalFinance-DB
 	url = https://github.com/KurtWelter/MyGoalFinance-DB
 	branch = main
+[submodule "FASE 2/Evidencias Proyecto/MyGoalFinance-Front"]
+	path = FASE 2/Evidencias Proyecto/MyGoalFinance-Front
+	url = https://github.com/KurtWelter/MyGoalFinance-Front.git
+	branch = main
