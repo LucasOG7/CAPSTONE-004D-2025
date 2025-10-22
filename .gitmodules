@@ -18,3 +18,7 @@
 	path = FASE 2/Evidencias Proyecto/MyGoalFinance-Backend
 	url = https://github.com/KurtWelter/MyGoalFinance-Backend.git
 	branch = main
+[submodule "FASE 2/Evidencias Proyecto/MyGoalFinance-DB"]
+	path = FASE 2/Evidencias Proyecto/MyGoalFinance-DB
+	url = https://github.com/KurtWelter/MyGoalFinance-DB.git
+	branch = main
