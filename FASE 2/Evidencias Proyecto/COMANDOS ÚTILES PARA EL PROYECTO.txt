@@ -1,0 +1,17 @@
+** COMANDOS ÚTILES PARA EL PROYECTO **
+
+- Iniciar backend:
+	npm run dev
+
+- Iniciar frontend:
+	npm start o npx expo start
+
+- Iniciar frontend con caché limpio:
+	npx expo start --clear
+
+- Iniciar frontend modo túnel (IOS)
+	npx expo start --tunnel
+
+- Si aparecen errores para instalar node modules probar:
+	Remove-Item package-lock.json -Force -ErrorAction SilentlyContinue
+	Remove-Item -Path "node_modules" -Recurse -Force -ErrorAction SilentlyContinue; Remove-Item -Path "package-lock.json" -Force -ErrorAction SilentlyContinue
